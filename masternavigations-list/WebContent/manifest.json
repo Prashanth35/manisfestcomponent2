@@ -1,0 +1,58 @@
+ {
+	"sap.app": {
+		"id": "rollcomponent2"
+	},
+	"sap.ui5": {
+		"rootView": "views.app",
+		"routing": {
+			"config": {
+						"viewType" : "XML",
+						"routerClass": "sap.m.routing.Router",
+						"controlAggregation" : "pages" 
+					},
+			            "routes": [
+			                       {
+                                   "pattern": "SplitApp",
+                                    "name": "route1",
+                                    "viewName": "views.splitapp",
+                                        "targetControl" : "idapp",
+                                       "targetAggregation" : "pages",
+                                       "title": "splitapp",
+                                            "subroutes" : [{
+                                              "pattern": "SplitApp/master1",
+                                              "name": "route2",
+                                              "viewName": "views.master1",
+                                              "targetControl" : "idsplitapp",
+                                              "targetAggregation" : "masterPages",
+                                              "title": "master",
+                                             "subroutes" : [{
+                                                 "pattern" : "SplitApp/master1/master2/detail1",
+                                                    "name" : "route3",   
+                                                "viewName": "views.detail1",
+                                                "targetAggregation" : "detailPages",
+                                                "title": "detail1"
+                                                   },
+                                                   {
+                                                 "pattern" : "SplitApp/master2/detail1/detail2",
+                                                    "name" : "route03",   
+                                                "viewName": "views.detail2",
+                                                "targetAggregation" : "detailPages"
+                                                   },
+                                                   {
+                                                 "pattern" : "",
+                                                    "name" : "route6",   
+                                                "viewName": "views.welcome",
+                                                "targetAggregation" : "detailPages"
+                                                   },
+                                                   {
+                                                   "pattern" : "SplitApp/master2",
+                                                    "name" : "route4",
+                                                    "viewName": "views.master2",
+                                                     "targetAggregation" : "masterPages"
+                                                                }]
+		                                           }]
+		                                           }]
+			           
+	   }
+	}
+}
